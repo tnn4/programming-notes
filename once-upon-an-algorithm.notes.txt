@@ -1,0 +1,2 @@
+A variable is a name that
+points to part of the world. pg.177
