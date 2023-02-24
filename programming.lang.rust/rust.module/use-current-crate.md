@@ -1,0 +1,1 @@
+To use a module from your current crate, add the `crate::` prefix to the path.

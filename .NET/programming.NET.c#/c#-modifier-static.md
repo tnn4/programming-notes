@@ -1,0 +1,1 @@
+The `static` modifier means the member belongs to type itself rather a specific object (instance).

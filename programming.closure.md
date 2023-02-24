@@ -1,0 +1,5 @@
+- object that represents operation
+- first class functions
+- basically a closure
+- object represents a thing you can invoke
+- in practice, you can use a raw function

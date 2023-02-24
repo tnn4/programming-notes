@@ -1,0 +1,2 @@
+they make code more readable
+you could copy the entire function or use a decorator

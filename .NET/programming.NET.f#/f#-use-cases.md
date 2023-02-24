@@ -1,0 +1,2 @@
+https://www.reddit.com/r/fsharp/comments/flxzm1/comment/fl2iqep/?utm_source=share&utm_medium=web2x&context=3,
+I used f# a lot when building games in unity. C# did all the impure front end stuff, f# provided all the calculations etc. There's a bit more boiler plate type code than I would like, especially with interfaces and the unity class MonoBehaviour, but it let me code up a lot of the fun stuff in f# very easily.

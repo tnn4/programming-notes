@@ -1,0 +1,22 @@
+enclose: surround or close off on all sides.
+
+enclosing scope: if the local scope is an inner function, the outer scope is the enclosing scope
+
+e.g. in python names are looked at in LEGB order
+L:local
+- scope created at function call which is different from function definition which means you will have as many local scopes as function calls
+- e.g. calling the same fn multiple times recursively will result in a new local scope each time 
+E:enclosing, 
+- things in the enclosing scope are available to the local(inner) scope
+G:global, 
+- names are available everywhere
+B:built-in
+- special Python scope that is available everywhere
+
+{B { G { E { L } }}}
+
+Example of enclosing scope in Rust
+
+[Rust's macros have a very important property called "hygiene" - explained better than I can here: https://danielkeep.github.io/tlborm/book/mbe-min-hygiene.html
+
+Basically, symbols in your macro definition cannot interact with symbols in the enclosing scope](https://www.reddit.com/r/rust/comments/jrlf7p/comment/gbtzgne/?utm_source=share&utm_medium=web2x&context=3)

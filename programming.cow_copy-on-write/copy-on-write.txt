@@ -1,0 +1,3 @@
+Copy-on-write means everyone is looking at / sharing the same resource at the same time but once someone wants to modify it, make them a distinct copy for private use.
+
+example: : Linux uses it when it uses `clone()` to implement `fork()` - the parent process's memory is COWed for the child.

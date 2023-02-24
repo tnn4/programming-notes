@@ -4,10 +4,12 @@
 # But not these files
 !.gitignore
 !.git
-!*.md # markdown
+# markdown
+!*.md
 !*.txt
 
 
 # ...even if they are in subdirectories
+!*/
 !*/*.md
 
