@@ -1,3 +1,0 @@
-```jsx
-{/* A JSX comment*/}
-```

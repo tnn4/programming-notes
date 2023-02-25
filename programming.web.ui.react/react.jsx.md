@@ -1,1 +1,0 @@
-jsx is actually js under the hood
