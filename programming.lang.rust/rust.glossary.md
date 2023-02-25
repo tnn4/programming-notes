@@ -1,8 +1,12 @@
 [terms]
 opt-level = "optimization level"
+
 ron = "rust object notation"
+
 cow = "clone on write smart pointer, MOO!"
+
 rc = "reference counted pointer"
+
 arc = "atomically reference counted pointer, thread-safe"
 
 terms:[
