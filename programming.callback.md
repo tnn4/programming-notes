@@ -2,14 +2,21 @@
 
 What are callback?
 
-MDN(Mozilla Developer Network) describes a callback as  "a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action". WTF did I just read. I have no idea. This tells us how callbacks work but tells us nothing in general of why we need it or why it's useful.
+- MDN(Mozilla Developer Network) describes a callback as  "a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action". 
+- Wikipedia: a callback or callback function is any reference to executable code that is passed as an argument to another piece of code; that code is expected to call back (execute) the callback function as part of its job.
+
+visualization:
+![Callback visualization](programming.img/programming.callback-00.png)
+
+
+[Helpful Stack Overflow explanation](https://stackoverflow.com/questions/824234/what-is-a-callback-function#)
 
 What problems do callback solve?
 Callbacks are required for event-driven programs.
 Callbacks allow programs to be responsive.
 Callbacks help your application scale.
 
-Before you can understand callbacks you need to understand synchronous and asyncrhonous operations. Callbacks are independent of async and asynchrony but you need to understand how they relate.
+Understanding synchronous and asyncrhonous operations will help you understand callbacks. Callbacks are actually independent of async and asynchrony understanding their relationship will help remember why they're needed.
 
 Synchronous operation. 
 - Each operation must wait on the previous to finish. 
@@ -27,7 +34,7 @@ END
 Asynchronous operation. 
 - Operations can be partially run and returned to at any time. 
 - There are no guarantees that operations will be completed in the order they were called.
-- non-blocking
+- also called non-blocking operations
 
 ```
 START
@@ -40,9 +47,11 @@ finish handle_db()
 END
 ```
 
+In GUIs and windowing systems immediate callbacks are used which means the callback function is called immediately after the calling function.
+
 In networking deferred callback / asynchronous callbacks are needed.
 
-Deferred callbacks happen when code can't run to completion immediately because they need to wait for other data to come in. 
+Deferred callbacks happen when code can't run to completion immediately because they need to wait for other data to come in. A callback function might not be called immediately.
 
 Imagine a world with no callbacks and no async. This is what it would look like.
 
@@ -83,6 +92,8 @@ f1 -> f3
 
 Your program must allow functions to callback when they are done running to let the original caller know it is done.
 
+How are callbacks used?
+"Callbacks are used to program applications in windowing systems. In this case, the application supplies (a reference to) a specific custom callback function for the operating system to call, which then calls this application-specific function in response to events like mouse clicks or key presses."
 
 Implementations
 
@@ -95,6 +106,35 @@ How do callbacks relate to dependency injection?
 DI is the process of providing the callback(the dependency) to the object.
 The callback is the dependency of the object that is being passed into.
 
+
+Callback example:
+
+```js
+// https://stackoverflow.com/questions/824234/what-is-a-callback-function
+// A function which accepts another function as an argument
+// (and will automatically invoke that function when it completes - note that there is no explicit call to callbackFunction)
+funct printANumber(int number, funct callbackFunction) {
+    printout("The number you provided is: " + number);
+}
+
+// a function which we will use in a driver function as a callback function
+funct printFinishMessage() {
+    printout("I have finished printing numbers.");
+}
+
+// Driver method
+funct event() {
+   printANumber(6, printFinishMessage);
+}
+```
 [MDN](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)
 
 [wikipedia](https://en.wikipedia.org/wiki/Callback_(computer_programming))
+
+Which is it?
+Oxford Languages definition of back
+- back - toward the rear
+   - make a call to the back (the callback function input)
+- back - expressing a return to an earlier or normal condition.
+   - go back to the calling function's context
+
